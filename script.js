@@ -54,7 +54,38 @@ const c = b;
 // ++ increment
 // a++;
 // -- decrement
-a--;
+// a--;
 
-console.log(a--);
-console.log(a);
+// console.log(a--);
+// console.log(a);
+
+// Math Object
+// const answer = Math.PI;
+
+//1. Math.round (4,7);
+// const answer = Math.round(4.7);
+// const answer = Math.round(4.4);
+
+// 2. Math.pow(8,2);
+// const answer = Math.pow(8, 2);
+// const answer = Math.pow(3, 3);
+
+// 3. Math.sqrt(64);
+// const answer = Math.sqrt(64);
+
+// 4. Math.ceil(4.4);
+// const answer = Math.ceil(4.4);
+
+// 5. Math.floor(4.9);
+// const answer = Math.floor(4.9);
+
+// 6. Math.min(0, 150, 30, 20, -8, -200)
+// const answer = Math.min(0, 150, 30, 20, -8, -200);
+
+// 7. Math.max(0, 150, 30, 20, -8, -200)
+// const answer = Math.max(0, 150, 30, 20, -8, -200);
+
+// 8. Math.random();
+// const answer = Math.random(); //gives number between 0 to 1 i.e 0.9342423423...
+
+// console.log(answer);
