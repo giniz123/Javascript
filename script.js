@@ -29,7 +29,7 @@ var name = "Giniz Osti";
 // let firstname= "Giniz";
 
 // ===== Arthimetic Operator
-const a = 5;
+let a = 5;
 const b = 6;
 const c = b;
 
@@ -39,10 +39,22 @@ const c = b;
 // - Subtraction
 // const result = a - b;
 
-// ** Multiplication
+// * Multiplication
 // const result = a * b;
 
-//  exponentiation
-const result = a ** b;
+// ** exponentiation
+// const result = a ** b;
 
-console.log(result);
+// / division
+// const result = a / b;
+
+// // modulus division
+// const result = a % b;
+
+// ++ increment
+// a++;
+// -- decrement
+a--;
+
+console.log(a--);
+console.log(a);
