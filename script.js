@@ -89,3 +89,67 @@ const c = b;
 // const answer = Math.random(); //gives number between 0 to 1 i.e 0.9342423423...
 
 // console.log(answer);
+
+// ====== Comparisons Operator
+// ==
+//===
+//>, >=
+//<, <=
+
+// const v1 = 5;
+// const v2 = 5;
+
+// const result = v1 == v2;
+// const result = v1 === v2;
+
+// const result = v1 > v2;
+// const result = v1 >= v2;
+// const result = v1 < v2;
+// const result = v1 <= v2;
+
+// console.log(result);
+
+// ======JS data types
+
+// String "Giniz Osti"; // Other way===> '', ``
+// const value = "Giniz Osti";
+
+// Number // 1234
+// const value = 1234;
+
+// Boolean // True or False
+// const value = false;
+
+// Undefined // Not defined in system memory
+// const value = undefined;
+
+// Null // defined in system memory
+// const value = null;
+
+// console.log(typeof value, value);
+
+// let user = "Giniz";
+// console.log(user);
+
+// const u1 = user;
+// console.log(u1);
+
+// user = "John";
+// console.log(user);
+// console.log(u1);
+
+// Reference Types
+// Object
+
+const user = {
+  fName: "Giniz",
+  num: 34,
+};
+console.log(user);
+
+const u1 = user;
+console.log(u1);
+
+user.fName = "Sam";
+console.log(user);
+console.log(u1);
