@@ -141,15 +141,80 @@ const c = b;
 // Reference Types
 // Object
 
-const user = {
-  fName: "Giniz",
-  num: 34,
-};
-console.log(user);
+// const user = {
+//   fName: "Giniz",
+//   num: 34,
+// };
+// console.log(user);
 
-const u1 = user;
-console.log(u1);
+// const u1 = user;
+// console.log(u1);
 
-user.fName = "Sam";
-console.log(user);
-console.log(u1);
+// user.fName = "Sam";
+// console.log(user);
+// console.log(u1);
+
+// ===============   Data Manipulation
+
+// Number / 0-9
+//  safe number range ===> -2^53-1 to 2^53-1
+// const num = 3_213_244_543_543;
+// console.log(num);
+
+// const num = "a53.232a";
+// // const val = +num;
+// // const val = parseInt(num);
+// const val = parseFloat(num);
+// isNaN(val);
+
+// console.log(typeof val, val, isNaN(val));
+
+// STRING
+
+// a. Escape Character
+// const str = `Hi there! I'm "Giniz Osti" and I live in Melbourne`;
+// const str = 'Hi there! I\'m "Giniz Osti" and I live in Melbourne';
+// console.log(typeof str);
+// console.log(str);
+
+// b. Length
+
+const str = 'Hi there! I\'m "Giniz Osti" and I live in Melbourne';
+console.log(str);
+
+// const val = str.length;
+
+// const val = str.toUpperCase();
+
+// const val = str[42];
+// const val = str.charAt(22);
+// const val = str.indexOf("e");
+// const val = str.lastIndexOf("e");
+// const val = str.lastIndexOf("Giniz");
+
+// const val = str.replace("Giniz", "John");
+// const val = str.replace("i", "u");
+// const val = str.replaceAll("i", "u");
+
+// const val = str.slice(3, 9);
+// const val = str.slice(3);
+// const val = str.slice(-6, -2);
+// const val = str.substring(3, 5);
+
+// const val = str.includes("giniz");  //False
+// const val = str.includes("Giniz");  // True
+
+// const val = str.search("Giniz");
+
+// const val = str.trim();
+
+// const val = str.split("i").join("i");
+
+// const val = str.concat(
+//   "Hello, we can add as much content as we want",
+//   " using concat"
+// );
+
+const val =
+  str + "Hello, we can add as much content as we want" + " using concat";
+console.log(val);
