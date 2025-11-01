@@ -238,12 +238,12 @@ alert("Hi there, click ok to continue");*/
 // }
 
 // 2. If else
-const age = 30;
-const vip = true;
+// const age = 30;
+// const vip = true;
 
-if (age < 50) {
-  console.log("Welcome");
-}
+// if (age < 50) {
+//   console.log("Welcome");
+// }
 
 // if ((age >= 18 && age < 50) || vip === true) {
 //   console.log("You can come inside");
@@ -298,3 +298,26 @@ if (age < 50) {
 //   default:
 //     console.log("Not an animal");
 // }
+
+// Logical Operator
+// &&, ||, !, Ternary
+
+// &&, || ===> They are used as a substitute of if condition
+
+// const age = 0;
+// const vip = true;
+
+// if (age < 50) {
+//   console.log("Welcome");
+// }
+
+// age < 50 && console.log("Welcome");
+
+// const val = age || "N/A";
+// console.log(val);
+
+// Ternary Operator
+
+const age = 30;
+
+age < 50 ? console.log("Welcome") : console.log("Not allowed");
