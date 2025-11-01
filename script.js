@@ -5,7 +5,7 @@ alert("Hi there, click ok to continue");*/
 
 // one way to define variable
 
-var name = "Giniz Osti";
+// var name = "Giniz Osti";
 
 // another way
 // var name; // Creating or defining varialbe
@@ -29,9 +29,9 @@ var name = "Giniz Osti";
 // let firstname= "Giniz";
 
 // ===== Arthimetic Operator
-let a = 5;
-const b = 6;
-const c = b;
+// let a = 5;
+// const b = 6;
+// const c = b;
 
 // + Addition
 // const result = a + b + c;
@@ -63,8 +63,8 @@ const c = b;
 // const answer = Math.PI;
 
 //1. Math.round (4,7);
-// const answer = Math.round(4.7);
-// const answer = Math.round(4.4);
+//const answer = Math.round(4.7);
+//const answer = Math.round(4.4);
 
 // 2. Math.pow(8,2);
 // const answer = Math.pow(8, 2);
@@ -86,9 +86,8 @@ const c = b;
 // const answer = Math.max(0, 150, 30, 20, -8, -200);
 
 // 8. Math.random();
-// const answer = Math.random(); //gives number between 0 to 1 i.e 0.9342423423...
-
-// console.log(answer);
+// const answer = Math.random(); //gives number between 0 to 2 i.e 0.9342423423...3
+// console.log(answer)
 
 // ====== Comparisons Operator
 // ==
@@ -179,8 +178,8 @@ const c = b;
 
 // b. Length
 
-const str = 'Hi there! I\'m "Giniz Osti" and I live in Melbourne';
-console.log(str);
+// const str = 'Hi there! I\'m "Giniz Osti" and I live in Melbourne';
+// console.log(str);
 
 // const val = str.length;
 
@@ -215,6 +214,87 @@ console.log(str);
 //   " using concat"
 // );
 
-const val =
-  str + "Hello, we can add as much content as we want" + " using concat";
-console.log(val);
+// const val =
+//   str + "Hello, we can add as much content as we want" + " using concat";
+// console.log(val);
+
+// ============Logical operator
+// &&, ||, !, Ternary
+
+// ======= JS Conditional Statements
+
+// 1. If
+
+// Truthy value: True, any number (positive or negative)= 1,2,3 & -1,-2,-3
+//  String value= "d", object{}, array[], function()=> {} i.e. Reference data type
+// falsy value: False, 0, NaN, empty string= "", null, undefined
+
+// const val = () => {};
+// const val = !"hi there";
+// console.log(val);
+
+// if (val) {
+//   console.log("You pass through the if condition");
+// }
+
+// 2. If else
+const age = 30;
+const vip = true;
+
+if (age < 50) {
+  console.log("Welcome");
+}
+
+// if ((age >= 18 && age < 50) || vip === true) {
+//   console.log("You can come inside");
+// }
+
+// if ((age >= 18 && age < 50) || vip == true) {
+//   console.log("You can come inside");
+// } else {
+//   console.log("Sorry, you're not allowed to come inside");
+// }
+
+// 3. Else if
+// if (condition1) {
+//   // statement1
+// } else if (condition2) {
+//   // statement2
+// } else if (condition3) {
+//   // statement3
+// } else {
+//   // run default code
+// }
+
+// const pet = "cow";
+
+// if (pet === "cat") {
+//   console.log("Meow");
+// } else if (pet === "dog") {
+//   console.log("Whoff");
+// } else if (pet === "cow") {
+//   console.log("Mowwww");
+// } else {
+//   console.log("Definitely not an animal");
+// }
+
+// // 4. Switch
+
+// const pet = "cow";
+
+// switch (pet) {
+//   case "cat":
+//     console.log("Meow");
+//     break;
+
+//   case "dog":
+//     console.log("Whoof");
+//     break;
+
+//   case "cow":
+//     console.log("Mowww");
+//     break;
+
+//   default:
+//     console.log("Not an animal");
+// }
