@@ -316,8 +316,147 @@ alert("Hi there, click ok to continue");*/
 // const val = age || "N/A";
 // console.log(val);
 
-// Ternary Operator
+// Ternary Operator ===> Used as a substitute of if else or else if condition
 
-const age = 30;
+// const age = 30;
 
-age < 50 ? console.log("Welcome") : console.log("Not allowed");
+// age < 50 ? console.log("Welcome") : console.log("Not allowed");
+
+// Array[]
+// const val = [
+//   "Giniz",
+//   232,
+//   "Osti",
+//   null,
+//   undefined,
+//   [211, "GinizOsti"],
+//   {},
+//   () => {},
+// ];
+// console.log(val);
+
+// Length, push, pop, shift, unshift, toString, join, [], splice, slice, indexOf
+
+// Sort, reverse
+
+// forEach, map
+
+// Filter, reduce, every, find
+
+// const fruit = ["banana", "apple", "orange", "mango"];
+
+// const value = fruit.length;
+// const value = fruit[3];
+
+// Adding data in array
+// fruit.push("watermelon");
+// fruit.unshift("watermelon");
+// fruit.splice(2, 0, "watermelon");
+
+// deleting data from array
+// const val = fruit.pop();
+// const val = fruit.shift();
+
+// const val = fruit.splice(2, 2);
+// const val = fruit.slice(2, 4);
+// delete fruit[2];
+// const val = fruit.toString();
+// const val = fruit.toString().split(",");
+
+// const val = fruit.indexOf("mango");
+// const val = fruit.includes("mango");
+// const val = fruit.join("_");
+
+// console.log(fruit.sort());
+// fruit.sort().reverse();
+// fruit.reverse();
+// console.log(fruit);
+
+// Mostly common Loops used in all programming language
+
+// 1. For Loops
+
+// for (let i = 10; i > 0; i--) {
+//   console.log(i);
+// }
+
+// 2. While loops
+// while (condition)
+
+// let i = 0;
+// while (i < 10) {
+//   console.log(i);
+//   i++;
+// }
+
+// 3. do while loops
+// do{} while()
+
+// let i = 0;
+// do {
+//   console.log(i);
+//   i++;
+// } while (i < 10);
+
+// for (let i = 0; i <= 100; i++) {
+//   if (i == 10) {
+//     // break;
+//     continue;
+//   }
+//   console.log(i);
+// }
+
+// for (let i = 0; i <= 100; i++) {
+//   if (i % 2 === 1) {
+//     continue;
+//   }
+//   console.log(i);
+// }
+
+// ====== JS specific loop
+
+// ============ For Of Loops => For arrays
+// for (x of cars i.e. iteravals)
+
+// let colors = ["Red", "Orange", "Yellow", "Green", "Blue"];
+
+// for (color of colors) {
+//   if (color === "Green") {
+//     break;
+//   } else {
+//     console.log(color);
+//   }
+// }
+
+// const fruits = ["apple", "banana", "orange", "mango"];
+// // console.log(fruits[1]);
+
+// const upperFruit = [];
+
+// for (item of fruits) {
+//   upperFruit.push(item.toUpperCase());
+//   // console.log(item);
+// }
+// console.log(upperFruit);
+
+// For Of ==> for string
+
+// const greetings = "Hello World";
+// console.log(greetings);
+
+// for (const greet of greetings) {
+//   if (greet === " ") {
+//     continue;
+//   }
+//   console.log(greet);
+// }
+
+// ================ For each loops
+
+// fruits.forEach();
+
+const Fruits = ["apple", "banana", "orange", "mango"];
+
+Fruits.forEach((fruit, index) => {
+  console.log(index, fruit);
+});
