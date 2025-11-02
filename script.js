@@ -455,8 +455,36 @@ alert("Hi there, click ok to continue");*/
 
 // fruits.forEach();
 
+// const Fruits = ["apple", "banana", "orange", "mango"];
+
+// Fruits.forEach((fruit, index) => {
+//   console.log(index, fruit);
+// });
+
+// ===== Map loop
+
+// const Fruits = ["apple", "banana", "orange", "mango"];
+// const newarray = Fruits.map((fruit, index) => {
+//   // console.log(index, fruit);
+//   // return "SKU :" + fruit.toUpperCase();
+//   if (fruit.includes("n")) {
+//     return fruit;
+//   }
+// });
+
+// console.log(newarray);
+
+// ======= Filter loop
 const Fruits = ["apple", "banana", "orange", "mango"];
 
-Fruits.forEach((fruit, index) => {
-  console.log(index, fruit);
-});
+// const newData = Fruits.filter((item, i) => {
+//   // if (item.includes("n")) {
+//   //   return true;
+//   // }
+
+//   return item.includes("n");
+// });
+
+const newData = Fruits.filter((item, i) => item.includes("n"));
+
+console.log(newData);
