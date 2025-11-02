@@ -489,12 +489,33 @@ alert("Hi there, click ok to continue");*/
 
 // console.log(newData);
 
-// ======= Reduce() loop // Mostly used for totaling numbers in array
+// ============== Reduce() loop // Mostly used for totaling numbers in array
+
+// const money = [10, 345, 56, 3245, 5467, 3456, 435673];
+
+// const total = money.reduce((acc, item) => {
+//   return acc + item;
+// }, 1000);
+
+// console.log(total);
+
+//==================== Every()
+
+// const Fruits = ["apple", "banana", "orange", "mango"];
+
+// const result = Fruits.every((item) => {
+//   console.log(item);
+//   return item.includes("a");
+// });
+
+// console.log(result);
+
+// Another example:
 
 const money = [10, 345, 56, 3245, 5467, 3456, 435673];
 
-const total = money.reduce((acc, item) => {
-  return acc + item;
-}, 1000);
+const result = money.every((amount) => {
+  return amount >= 10;
+});
 
-console.log(total);
+console.log(result);
