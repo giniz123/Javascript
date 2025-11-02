@@ -475,7 +475,7 @@ alert("Hi there, click ok to continue");*/
 // console.log(newarray);
 
 // ======= Filter loop
-const Fruits = ["apple", "banana", "orange", "mango"];
+// const Fruits = ["apple", "banana", "orange", "mango"];
 
 // const newData = Fruits.filter((item, i) => {
 //   // if (item.includes("n")) {
@@ -485,6 +485,16 @@ const Fruits = ["apple", "banana", "orange", "mango"];
 //   return item.includes("n");
 // });
 
-const newData = Fruits.filter((item, i) => item.includes("n"));
+// const newData = Fruits.filter((item, i) => item.includes("n"));
 
-console.log(newData);
+// console.log(newData);
+
+// ======= Reduce() loop // Mostly used for totaling numbers in array
+
+const money = [10, 345, 56, 3245, 5467, 3456, 435673];
+
+const total = money.reduce((acc, item) => {
+  return acc + item;
+}, 1000);
+
+console.log(total);
