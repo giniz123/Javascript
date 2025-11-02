@@ -512,10 +512,31 @@ alert("Hi there, click ok to continue");*/
 
 // Another example:
 
+// const money = [10, 345, 56, 3245, 5467, 3456, 435673];
+
+// const result = money.every((amount) => {
+//   return amount >= 10;
+// });
+
+// console.log(result);
+
+// Way of checking if the item exists in array or not
+// ============= First way => Includes()
 const money = [10, 345, 56, 3245, 5467, 3456, 435673];
 
-const result = money.every((amount) => {
-  return amount >= 10;
-});
+// const result = money.includes(10);
+// console.log(result);
+
+// =========== Second way => Find()
+
+// const result = money.find((item) => {
+//   return item === 56;
+// });
+
+// const result = money.find((item) => item === 56);
+
+// ============ Third way => Indexof()
+
+const result = money.indexOf(56);
 
 console.log(result);
