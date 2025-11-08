@@ -60,7 +60,7 @@ alert("Hi there, click ok to continue");*/
 // console.log(a);
 
 // Math Object
-// const answer = Math.PI;
+// const answer = Math.PI;  => Math properties
 
 //1. Math.round (4,7);
 //const answer = Math.round(4.7);
@@ -86,8 +86,10 @@ alert("Hi there, click ok to continue");*/
 // const answer = Math.max(0, 150, 30, 20, -8, -200);
 
 // 8. Math.random();
-// const answer = Math.random(); //gives number between 0 to 2 i.e 0.9342423423...3
+// const answer = Math.random(); //gives number between 0 to 1 i.e 0.9342423423...3
 // console.log(answer)
+
+// const result = Math.round(randomNumber);
 
 // ====== Comparisons Operator
 // ==
@@ -413,7 +415,7 @@ alert("Hi there, click ok to continue");*/
 //   console.log(i);
 // }
 
-// ====== JS specific loop
+// ================================================ JS specific loop
 
 // ============ For Of Loops => For arrays
 // for (x of cars i.e. iteravals)
@@ -521,13 +523,13 @@ alert("Hi there, click ok to continue");*/
 // console.log(result);
 
 // Way of checking if the item exists in array or not
-// ============= First way => Includes()
-const money = [10, 345, 56, 3245, 5467, 3456, 435673];
+// ============= First way => Includes() => gives boolean value
+// const money = [10, 345, 56, 3245, 5467, 3456, 435673];
 
 // const result = money.includes(10);
 // console.log(result);
 
-// =========== Second way => Find()
+// =========== Second way => Find() => gives exact item we're looking for
 
 // const result = money.find((item) => {
 //   return item === 56;
@@ -535,8 +537,139 @@ const money = [10, 345, 56, 3245, 5467, 3456, 435673];
 
 // const result = money.find((item) => item === 56);
 
-// ============ Third way => Indexof()
+// ============ Third way => Indexof() => gives the index of the item in array
 
-const result = money.indexOf(56);
+// const result = money.indexOf(56);
 
-console.log(result);
+// console.log(result);
+
+// ========== JS array Challenges
+// 0-1 where 1 is exclusive means that it doesn't come anytime and 0 is inclusive
+
+// const newArray = [];
+
+// for (i = 0; i < 50; i++) {
+//   const result = Math.floor(Math.random() * 100) + 1;
+
+//   // newArray.push(result);
+//   newArray[i] = result;
+// }
+// newArray.sort((a, b) => b - a).reverse();
+// console.log(newArray);
+
+// const total = newArray.reduce((acc, item) => {
+//   return acc + item;
+// }, 0);
+// const total = newArray.reduce((acc, item) => acc + item, 0);
+// console.log(total);
+
+// const evenArray = newArray.filter((item) => {
+//   // if (item % 2 === 0) {
+//   //   return true;
+//   // }
+
+//   return item % 2 === 0;
+// });
+
+// const evenArray = newArray.filter((item, index) => item % 2 === 0);
+// const oddArray = newArray.filter((item, index) => item % 2 === 1);
+// const oddArray = newArray.filter((item, index) => item % 2 !== 0);
+// console.log(evenArray, oddArray);
+
+// const uniqueArray = [];
+// for (i = 0; i < newArray.length; i++) {
+//   console.log(newArray[i]);
+// }
+
+// // // JS data manipulation
+
+// Object{}
+
+const person = {
+  name: "Jack Hammer",
+  phNo: 888999777,
+  address: "Melbourne",
+  isMarried: undefined,
+  hasPet: true,
+  skills: ["html", "css", "javascript", ["flexbox", "grid-system"]],
+  gender: null,
+  parent: {
+    father: "ABB",
+    mother: "BAA",
+  },
+  bio: () => {
+    return "Hi there!";
+  },
+};
+// How to read through objects
+
+// const newData = person.name;
+// const newData = person["name"];
+// const newData = person.skills[1];
+// const newData = person.skills[3][1];
+// const newData = person.parent["mother"];
+// const newData = person.bio();
+
+// person.name = "Giniz";
+
+// console.log(person);
+// console.log(newData);
+
+// how to update and add attributes/properties in object
+// person["name"] = "Ram";
+// person.name = "Ram";
+// person.height = "173cm";
+// person.skills.push("react");
+// person.skills[3].push("box-model");
+
+// person.parent.marriageDate = "2020";
+
+// console.log(person);
+
+// Delete data from object
+
+// person.phNo = null;
+// person.phNo = undefined;
+// delete person.phNo;
+
+// first method to delete array from array
+// person.skills.pop(3);
+
+// 2nd method to delete array from array
+// person.skills[3].splice(0, 2);
+// person.skills.splice(3, 1);
+
+// best practices
+
+// console.log(person);
+
+// Destructuring: const {name}= obj
+
+// Default
+// person.room = undefined;
+// const {
+//   name,
+//   phNo,
+//   parent: { father, mother },
+//   room = "N/A",
+// } = person;
+
+// console.log(name, phNo, father, mother, room);
+
+// Rest
+// const { name, phNo, parent, ...rest } = person;
+
+// console.log(rest);
+
+// Spread
+
+const career = {
+  jobTitle: "Software Engineer",
+  salary: 100,
+};
+
+const combo = {
+  ...person,
+  ...career,
+};
+console.log(combo);
