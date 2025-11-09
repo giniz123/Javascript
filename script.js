@@ -663,13 +663,43 @@ const person = {
 
 // Spread
 
-const career = {
-  jobTitle: "Software Engineer",
-  salary: 100,
-};
+// const career = {
+//   jobTitle: "Software Engineer",
+//   salary: 100,
+// };
 
-const combo = {
-  ...person,
-  ...career,
-};
-console.log(combo);
+// const combo = {
+//   ...person,
+//   ...career,
+// };
+// console.log(combo);
+
+// for in loop for object
+// for (key in person) {
+//   console.log(key, person[key]);
+// }
+
+// Converting object into array
+// object.entries{sourceObject}
+
+// To get both keys and values (properties) in an array, we use entries
+
+// const personArg = Object.entries(person);
+// console.log(personArg);
+
+// To only get keys in an array, we use keys
+
+// const personArg = Object.keys(person);
+// console.log(personArg);
+
+// To only get values in an array, we use values
+
+// const personArg = Object.values(person);
+// console.log(personArg);
+
+for (const key in person) {
+  console.log(key, person[key]);
+}
+
+const arrayOfObject = Object.values(person);
+console.log(arrayOfObject);
