@@ -585,22 +585,22 @@ alert("Hi there, click ok to continue");*/
 
 // Object{}
 
-const person = {
-  name: "Jack Hammer",
-  phNo: 888999777,
-  address: "Melbourne",
-  isMarried: undefined,
-  hasPet: true,
-  skills: ["html", "css", "javascript", ["flexbox", "grid-system"]],
-  gender: null,
-  parent: {
-    father: "ABB",
-    mother: "BAA",
-  },
-  bio: () => {
-    return "Hi there!";
-  },
-};
+// const person = {
+//   name: "Jack Hammer",
+//   phNo: 888999777,
+//   address: "Melbourne",
+//   isMarried: undefined,
+//   hasPet: true,
+//   skills: ["html", "css", "javascript", ["flexbox", "grid-system"]],
+//   gender: null,
+//   parent: {
+//     father: "ABB",
+//     mother: "BAA",
+//   },
+//   bio: () => {
+//     return "Hi there!";
+//   },
+// };
 // How to read through objects
 
 // const newData = person.name;
@@ -697,9 +697,42 @@ const person = {
 // const personArg = Object.values(person);
 // console.log(personArg);
 
-for (const key in person) {
-  console.log(key, person[key]);
-}
+// Date Manipulation / Date Object
 
-const arrayOfObject = Object.values(person);
-console.log(arrayOfObject);
+// const date = new Date();
+
+// console.log(date.getTime());
+
+// Date challange : Create a function that takes a
+// food and the expire date and retuns one of the followings:
+// 1. if expired: AB is expired 4 days ago
+// 2. if not expired: you have 10 days to use this product.
+
+const foods = [
+  {
+    foodName: "Tuna",
+    expireDate: "2025-11-09",
+  },
+  {
+    foodName: "Noodle",
+    expireDate: "2025-11-15",
+  },
+];
+
+const checkExpiry = ({ foodName, expireDate }) => {
+  const currentTime = new Date().getTime();
+  const expireTime = new Date(expireDate).getTime();
+  const timeDiff = expireTime - currentTime;
+  const dayDiff = Math.floor(timeDiff / (24 * 60 * 60 * 1000));
+
+  if (dayDiff < 0) {
+    return `${foodName} is expired ${Math.abs(dayDiff)} days ago`;
+  } else {
+    return `You have ${dayDiff} days to use this ${foodName}`;
+  }
+};
+
+foods.map((food) => {
+  const result = checkExpiry(food);
+  console.log(result);
+});
