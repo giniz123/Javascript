@@ -708,31 +708,103 @@ alert("Hi there, click ok to continue");*/
 // 1. if expired: AB is expired 4 days ago
 // 2. if not expired: you have 10 days to use this product.
 
-const foods = [
+// const foods = [
+//   {
+//     foodName: "Tuna",
+//     expireDate: "2025-11-09",
+//   },
+//   {
+//     foodName: "Noodle",
+//     expireDate: "2025-11-15",
+//   },
+// ];
+
+// const checkExpiry = ({ foodName, expireDate }) => {
+//   const currentTime = new Date().getTime();
+//   const expireTime = new Date(expireDate).getTime();
+//   const timeDiff = expireTime - currentTime;
+//   const dayDiff = Math.floor(timeDiff / (24 * 60 * 60 * 1000));
+
+//   if (dayDiff < 0) {
+//     return `${foodName} is expired ${Math.abs(dayDiff)} days ago`;
+//   } else {
+//     return `You have ${dayDiff} days to use this ${foodName}`;
+//   }
+// };
+
+// foods.map((food) => {
+//   const result = checkExpiry(food);
+//   console.log(result);
+// });
+
+// ============= JS Function
+
+// creating function
+
+// function introduceYourself(name, location) {
+//   const str = `Hello there, this is ${name} and welcome to ${location} `;
+
+//   console.log(str);
+// }
+
+// function greet(name = "user") {
+//   console.log(`Good Morning ${name}`);
+// }
+
+// greet("Giniz");
+// greet();
+
+// =========== Examples- creating function that gives area of reactangle
+
+// function areaOfRectangle(length = "l", breadth = "b") {
+//   let area = length * breadth;
+//   return area;
+// }
+
+// console.log(areaOfRectangle(2, 3));
+
+// ES6 function OR arrow function
+
+// const introduceYourself = (name, location) => {
+//   const str = `Hello there, this is ${name} and welcome to ${location} `;
+
+//   console.log(str);
+// };
+
+// introduceYourself("Giniz", "Sydney");
+// introduceYourself("Josh", "Melbourne");
+// introduceYourself("Geoff", "Brisbane");
+
+// Understanding of multiple functions working together
+
+const people = [
   {
-    foodName: "Tuna",
-    expireDate: "2025-11-09",
+    name: "Giniz",
+    location: "Melbourne",
+    interest: "Coding and learning new things ",
+    hobby: "watching soccer",
   },
   {
-    foodName: "Noodle",
-    expireDate: "2025-11-15",
+    name: "Joseph",
+    location: "Brisbane",
+  },
+  {
+    name: "Louis",
   },
 ];
 
-const checkExpiry = ({ foodName, expireDate }) => {
-  const currentTime = new Date().getTime();
-  const expireTime = new Date(expireDate).getTime();
-  const timeDiff = expireTime - currentTime;
-  const dayDiff = Math.floor(timeDiff / (24 * 60 * 60 * 1000));
-
-  if (dayDiff < 0) {
-    return `${foodName} is expired ${Math.abs(dayDiff)} days ago`;
-  } else {
-    return `You have ${dayDiff} days to use this ${foodName}`;
-  }
+const remainingDetails = ({ interest, hobby }) => {
+  return `and I like ${interest} and love ${hobby}`;
 };
 
-foods.map((food) => {
-  const result = checkExpiry(food);
-  console.log(result);
+const intros = ({ name, location = "Hidden", ...rest }) => {
+  let about = `${name} is from ${location}`;
+  if (rest.interest) {
+    about += remainingDetails(rest);
+  }
+  return about;
+};
+
+people.forEach((element, index) => {
+  console.log(intros(element));
 });
