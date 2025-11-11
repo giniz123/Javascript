@@ -777,34 +777,62 @@ alert("Hi there, click ok to continue");*/
 
 // Understanding of multiple functions working together
 
-const people = [
-  {
-    name: "Giniz",
-    location: "Melbourne",
-    interest: "Coding and learning new things ",
-    hobby: "watching soccer",
-  },
-  {
-    name: "Joseph",
-    location: "Brisbane",
-  },
-  {
-    name: "Louis",
-  },
-];
+// const people = [
+//   {
+//     name: "Giniz",
+//     location: "Melbourne",
+//     interest: "Coding and learning new things ",
+//     hobby: "watching soccer",
+//   },
+//   {
+//     name: "Joseph",
+//     location: "Brisbane",
+//   },
+//   {
+//     name: "Louis",
+//   },
+// ];
 
-const remainingDetails = ({ interest, hobby }) => {
-  return `and I like ${interest} and love ${hobby}`;
-};
+// const remainingDetails = ({ interest, hobby }) => {
+//   return `and I like ${interest} and love ${hobby}`;
+// };
 
-const intros = ({ name, location = "Hidden", ...rest }) => {
-  let about = `${name} is from ${location}`;
-  if (rest.interest) {
-    about += remainingDetails(rest);
+// const intros = ({ name, location = "Hidden", ...rest }) => {
+//   let about = `${name} is from ${location}`;
+//   if (rest.interest) {
+//     about += remainingDetails(rest);
+//   }
+//   return about;
+// };
+
+// people.forEach((element, index) => {
+//   console.log(intros(element));
+// });
+
+// ========= JS Time Scheduling
+// 1. setTimeout()
+//  clearTimeout()
+
+// 2. setinterval()
+// clearinterval()
+
+// 1. setTimeout()
+
+// console.log("I'm from before setTimeout block");
+
+// const counter = setTimeout(() => {
+//   console.log("I'm from setTimeout block");
+// }, 3000); // time has to be in millisecond
+
+// clearTimeout(counter);
+
+// 2. setinterval()
+
+let counter = 10;
+const interval = setInterval(() => {
+  console.log("from the setInterval block", counter--);
+  if (counter === 0) {
+    clearInterval(interval);
+    console.log("Happy Birthday!!!!");
   }
-  return about;
-};
-
-people.forEach((element, index) => {
-  console.log(intros(element));
-});
+}, 100);
