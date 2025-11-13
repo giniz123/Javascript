@@ -44,10 +44,42 @@
 // console.log(v1());
 
 // // Interview question for closure and hoisting
-let counter = 0;
-for (var i = 0; i < 5; i++) {
-  function print() {
-    console.log(`${i} but counter is ${counter++}`);
-  }
-  setTimeout(print, 0);
+// let counter = 0;
+// for (var i = 0; i < 5; i++) {
+//   function print() {
+//     console.log(`${i} but counter is ${counter++}`);
+//   }
+//   setTimeout(print, 0);
+// }
+
+// Object Oriented Programming OOP
+
+// OOP
+
+// const person = {
+//   name: "Giniz",
+//   address: "Melbourne",
+//   bio() {
+//     return `This is ${this.name} and I live in ${this.address}`;
+//   },
+// };
+
+// console.log(person.bio());
+
+// Factory Function
+
+function aboutPerson(name, address) {
+  return {
+    name,
+    address,
+    bio() {
+      return `This is ${this.name} and I live in ${this.address}`;
+    },
+  };
 }
+
+const aboutGiniz = aboutPerson("Giniz", " Melbourne");
+console.log(aboutGiniz, aboutGiniz.bio());
+
+const aboutSam = aboutPerson("Sam", "USA");
+console.log(aboutSam, aboutSam.bio());
