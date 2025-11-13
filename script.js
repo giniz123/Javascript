@@ -828,11 +828,34 @@ alert("Hi there, click ok to continue");*/
 
 // 2. setinterval()
 
-let counter = 10;
-const interval = setInterval(() => {
-  console.log("from the setInterval block", counter--);
-  if (counter === 0) {
-    clearInterval(interval);
-    console.log("Happy Birthday!!!!");
-  }
-}, 100);
+// let counter = 10;
+// const interval = setInterval(() => {
+//   console.log("from the setInterval block", counter--);
+//   if (counter === 0) {
+//     clearInterval(interval);
+//     console.log("Happy Birthday!!!!");
+//   }
+// }, 100);
+
+const yoyo = () => console.log("0." + (5 + 6));
+
+console.log("1. Log");
+
+setTimeout(() => {
+  console.log("2. inside first set timeout");
+}, 5000);
+
+console.log("3. right after first set timeout");
+
+const sayHey = () => {
+  console.log("4. inside sayHey");
+  yoyo();
+};
+
+setTimeout(() => {
+  console.log("5. inside second set timeout");
+}, 0);
+
+sayHey();
+
+console.log("6. last console.log");
