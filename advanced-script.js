@@ -68,18 +68,66 @@
 
 // Factory Function
 
-function aboutPerson(name, address) {
-  return {
-    name,
-    address,
-    bio() {
-      return `This is ${this.name} and I live in ${this.address}`;
-    },
-  };
+// function personDetail(name, address) {
+//   return {
+//     name,
+//     address,
+//     bio() {
+//       return `This is ${this.name} and I reside in ${this.address}`;
+//     },
+//   };
+// }
+
+// const leoObj = personDetail("Lionel Messi", "Barcelona");
+// console.log(leoObj, leoObj.bio);
+
+// function aboutPerson(name, address) {
+//   return {
+//     name,
+//     address,
+//     bio() {
+//       return `This is ${this.name} and I live in ${this.address}`;
+//     },
+//   };
+// }
+
+// const aboutGiniz = aboutPerson("Giniz", " Melbourne");
+// console.log(aboutGiniz, aboutGiniz.bio());
+
+// const aboutSam = aboutPerson("Sam", "USA");
+// console.log(aboutSam, aboutSam.bio());
+
+// Constructor Function
+
+// function AboutPerson(name, location) {
+//   this.name = name;
+//   this.location = location;
+// }
+
+// AboutPerson.prototype.bio = function () {
+//   return `This is ${this.name} and I live in ${this.address}`;
+// };
+
+// const ginizObj = new AboutPerson("Giniz", "Melbourne");
+// console.log(ginizObj);
+
+//  Class OOP
+
+class Person {
+  constructor(name, add) {
+    this.name = name;
+    this.add = add;
+  }
+
+  bio() {
+    return `Hey this is ${this.name} and I live in ${this.add}`;
+  }
+
+  nameUpper() {
+    this.name = this.name.toUpperCase();
+  }
 }
 
-const aboutGiniz = aboutPerson("Giniz", " Melbourne");
-console.log(aboutGiniz, aboutGiniz.bio());
-
-const aboutSam = aboutPerson("Sam", "USA");
-console.log(aboutSam, aboutSam.bio());
+const ginizObj = new Person("Giniz", "Melbourne");
+ginizObj.nameUpper();
+console.log(ginizObj.bio());
