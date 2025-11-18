@@ -113,21 +113,62 @@
 
 //  Class OOP
 
+// class Person {
+//   constructor(name, add) {
+//     this.name = name;
+//     this.add = add;
+//   }
+
+//   bio() {
+//     return `Hey this is ${this.name} and I live in ${this.add}`;
+//   }
+
+//   nameUpper() {
+//     this.name = this.name.toUpperCase();
+//   }
+// }
+
+// const ginizObj = new Person("Giniz", "Melbourne");
+// ginizObj.nameUpper();
+// console.log(ginizObj.bio());
+
+// =========== 4 Pillars of OOP
+
+// ======= Encapsulation
+
+const ginizobj = {
+  name: "Giniz",
+  add: "Melbourne",
+  DOB: "1-1-2000",
+};
+
 class Person {
-  constructor(name, add) {
-    this.name = name;
-    this.add = add;
+  #DOB;
+  constructor(obj) {
+    this.name = obj.name;
+    this.add = obj.add;
+    this.#DOB = obj.DOB;
   }
 
   bio() {
-    return `Hey this is ${this.name} and I live in ${this.add}`;
+    return `This is ${this.name} from ${
+      this.add
+    } and I am ${this.#getAge()} years old`;
   }
 
-  nameUpper() {
-    this.name = this.name.toUpperCase();
+  #getAge() {
+    return new Date().getFullYear() - new Date(this.#DOB).getFullYear();
+  }
+
+  birthday() {
+    return `Happy birthday ${this.name}! Now you're ${
+      this.#getAge() + 1
+    } years old`;
   }
 }
 
-const ginizObj = new Person("Giniz", "Melbourne");
-ginizObj.nameUpper();
-console.log(ginizObj.bio());
+const user1 = new Person(ginizobj);
+console.log(user1.bio());
+console.log(user1.birthday());
+console.log(user1.DOB);
+// console.log(user1.getAge());
