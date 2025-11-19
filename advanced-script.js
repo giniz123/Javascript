@@ -134,41 +134,94 @@
 
 // =========== 4 Pillars of OOP
 
-// ======= Encapsulation
+// ======= Encapsulation / Abstraction
 
-const ginizobj = {
-  name: "Giniz",
-  add: "Melbourne",
-  DOB: "1-1-2000",
-};
+// const ginizobj = {
+//   name: "Giniz",
+//   add: "Melbourne",
+//   DOB: "1-1-2000",
+// };
 
-class Person {
-  #DOB;
-  constructor(obj) {
-    this.name = obj.name;
-    this.add = obj.add;
-    this.#DOB = obj.DOB;
+// class Person {
+//   #DOB;  // Abstraction=> Abstracting DOB
+//   constructor(obj) {
+//     this.name = obj.name;
+//     this.add = obj.add;
+//     this.#DOB = obj.DOB;
+//   }
+
+//   bio() {
+//     return `This is ${this.name} from ${
+//       this.add
+//     } and I am ${this.#getAge()} years old`;
+//   }
+
+//   #getAge() {
+//     return new Date().getFullYear() - new Date(this.#DOB).getFullYear();
+//   }
+
+//   birthday() {
+//     return `Happy birthday ${this.name}! Now you're ${
+//       this.#getAge() + 1
+//     } years old`;
+//   }
+// }
+
+// const user1 = new Person(ginizobj);
+// console.log(user1.bio());
+// console.log(user1.birthday());
+// console.log(user1.DOB);
+// console.log(user1.getAge());
+
+// Inheritance
+
+class Living {
+  constructor(name, add) {
+    this.name = name;
+    this.add = add;
   }
-
   bio() {
-    return `This is ${this.name} from ${
-      this.add
-    } and I am ${this.#getAge()} years old`;
-  }
-
-  #getAge() {
-    return new Date().getFullYear() - new Date(this.#DOB).getFullYear();
-  }
-
-  birthday() {
-    return `Happy birthday ${this.name}! Now you're ${
-      this.#getAge() + 1
-    } years old`;
+    return `This is ${this.name} from ${this.add}`;
   }
 }
 
-const user1 = new Person(ginizobj);
-console.log(user1.bio());
-console.log(user1.birthday());
-console.log(user1.DOB);
-// console.log(user1.getAge());
+class Person extends Living {
+  constructor(obj) {
+    super(obj.name, obj.add);
+    this.career = obj.career;
+  }
+
+  jobcareer() {
+    return `their career is ${this.career}`;
+  }
+}
+
+const p1 = {
+  name: "Giniz",
+  add: "Melbourne",
+  career: "Software Developer",
+};
+
+const p1obj = new Person(p1);
+console.log(p1obj.bio());
+console.log(p1obj.jobcareer());
+
+class Animal extends Living {
+  constructor(obj) {
+    super(obj.name, obj.add);
+    this.strength = obj.strength;
+  }
+
+  action() {
+    return `their strength is ${this.strength}`;
+  }
+}
+
+const dog = {
+  name: "Marshal",
+  add: "Kathmandu",
+  strength: "to bark and chase theif",
+};
+
+const marshalobj = new Animal(dog);
+console.log(marshalobj);
