@@ -837,25 +837,25 @@ alert("Hi there, click ok to continue");*/
 //   }
 // }, 100);
 
-const yoyo = () => console.log("0." + (5 + 6));
+// const yoyo = () => console.log("0." + (5 + 6));
 
-console.log("1. Log");
+// console.log("1. Log");
 
-setTimeout(() => {
-  console.log("2. inside first set timeout");
-}, 5000);
+// setTimeout(() => {
+//   console.log("2. inside first set timeout");
+// }, 5000);
 
-console.log("3. right after first set timeout");
+// console.log("3. right after first set timeout");
 
-const sayHey = () => {
-  console.log("4. inside sayHey");
-  yoyo();
-};
+// const sayHey = () => {
+//   console.log("4. inside sayHey");
+//   yoyo();
+// };
 
-setTimeout(() => {
-  console.log("5. inside second set timeout");
-}, 0);
+// setTimeout(() => {
+//   console.log("5. inside second set timeout");
+// }, 0);
 
-sayHey();
+// sayHey();
 
-console.log("6. last console.log");
+// console.log("6. last console.log");

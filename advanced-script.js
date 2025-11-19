@@ -175,11 +175,91 @@
 
 // Inheritance
 
+// class Living {
+//   constructor(name, add) {
+//     this.name = name;
+//     this.add = add;
+//   }
+//   bio() {
+//     return `This is ${this.name} from ${this.add}`;
+//   }
+// }
+
+// class Person extends Living {
+//   constructor(obj) {
+//     super(obj.name, obj.add);
+//     this.career = obj.career;
+//   }
+
+//   jobcareer() {
+//     return `their career is ${this.career}`;
+//   }
+// }
+
+// const p1 = {
+//   name: "Giniz",
+//   add: "Melbourne",
+//   career: "Software Developer",
+// };
+
+// const p1obj = new Person(p1);
+// console.log(p1obj.bio());
+// console.log(p1obj.jobcareer());
+
+// class Animal extends Living {
+//   constructor(obj) {
+//     super(obj.name, obj.add);
+//     this.strength = obj.strength;
+//   }
+
+//   action() {
+//     return `their strength is ${this.strength}`;
+//   }
+// }
+
+// const dog = {
+//   name: "Marshal",
+//   add: "Kathmandu",
+//   strength: "to bark and chase theif",
+// };
+
+// const marshalobj = new Animal(dog);
+// console.log(marshalobj);
+
+// Polymorphism
+
+// class Student extends Person {
+//   constructor(obj) {
+//     super(obj);
+//   }
+//   jobcareer() {
+//     return `They are currently ${this.career}`;
+//   }
+// }
+
+// const s1 = {
+//   name: "John",
+//   add: "Brisbane",
+//   career: "Studying IT",
+// };
+
+// const s1obj = new Student(s1);
+// console.log(s1obj);
+// console.log(s1obj.jobcareer());
+
+// More about ====== Abstraction
+
 class Living {
   constructor(name, add) {
     this.name = name;
     this.add = add;
+    if (new.target === Living) {
+      throw new Error(
+        "Living is abstracted. You cannot access it and neither can create any instance from it"
+      );
+    }
   }
+
   bio() {
     return `This is ${this.name} from ${this.add}`;
   }
@@ -206,22 +286,5 @@ const p1obj = new Person(p1);
 console.log(p1obj.bio());
 console.log(p1obj.jobcareer());
 
-class Animal extends Living {
-  constructor(obj) {
-    super(obj.name, obj.add);
-    this.strength = obj.strength;
-  }
-
-  action() {
-    return `their strength is ${this.strength}`;
-  }
-}
-
-const dog = {
-  name: "Marshal",
-  add: "Kathmandu",
-  strength: "to bark and chase theif",
-};
-
-const marshalobj = new Animal(dog);
-console.log(marshalobj);
+const newLivingObj = new Living(p1.name, p1.add);
+console.log(newLivingObj.bio());
