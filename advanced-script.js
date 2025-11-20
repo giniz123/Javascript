@@ -375,7 +375,7 @@
 // [].map(()=>{}) => array methods/loops are higher order function itself
 /* In higher order function => Passing function as a parameter */
 
-/* *************************   Answer   ******************************* */
+/* *************************   Example   ******************************* */
 
 /*
 
@@ -404,7 +404,7 @@ console.log(multiply(3, 3));
 
 /* In higher order function => Calling one function inside another function */
 
-/* *************************   Answer   ******************************* */
+/* *************************   Example   ******************************* */
 
 /*
 
@@ -419,3 +419,25 @@ const result = main(2, 3);
 console.log(result(2));
 
 */
+
+// Composition Function => combination of multiple function
+
+const add = (a, b) => {
+  return a + b;
+};
+
+const multiply = (val, exp) => {
+  return Math.pow(val, exp);
+};
+
+const calculator = (a, b, c) => {
+  return multiply(add(a, b), c);
+
+  // OR
+
+  // const adder = add(a, b);
+  // const result = multiply(adder, c);
+  // return result;
+};
+
+console.log(calculator(4, 4, 2));
