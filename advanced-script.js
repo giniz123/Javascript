@@ -422,22 +422,50 @@ console.log(result(2));
 
 // Composition Function => combination of multiple function
 
-const add = (a, b) => {
-  return a + b;
+// const add = (a, b) => {
+//   return a + b;
+// };
+
+// const multiply = (val, exp) => {
+//   return Math.pow(val, exp);
+// };
+
+// const calculator = (a, b, c) => {
+//   return multiply(add(a, b), c);
+
+// OR
+
+// const adder = add(a, b);
+// const result = multiply(adder, c);
+// return result;
+// };
+
+// console.log(calculator(4, 4, 2));
+
+// Recursion Function => calling same function inside itself
+
+// let i = 0;
+// const counter = () => {
+//   console.log(i++);
+//   // Recursion function       //  counter();
+//   if (i === 10) {
+//     return;
+//   }
+//   counter();
+// };
+
+// counter();
+
+// console.log(i);
+
+let sum = 0;
+const total = (nums) => {
+  sum = sum + nums.pop();
+  if (!nums.length) {
+    return sum;
+  }
+  return total(nums);
 };
 
-const multiply = (val, exp) => {
-  return Math.pow(val, exp);
-};
-
-const calculator = (a, b, c) => {
-  return multiply(add(a, b), c);
-
-  // OR
-
-  // const adder = add(a, b);
-  // const result = multiply(adder, c);
-  // return result;
-};
-
-console.log(calculator(4, 4, 2));
+const nums = [22, 44, 534, 634, 1232, 224];
+console.log(total(nums));
