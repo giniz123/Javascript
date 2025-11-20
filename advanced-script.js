@@ -330,43 +330,92 @@
 // console.log(carTesla.drive());
 // console.log(carTesla.stopEngine());
 
-//
+// ===================== Functional Programming
+// It doesn't change the original function/ It doesn't mutate the main function
 
-class Car {
-  constructor(name, model) {
-    this.name = name;
-    this.model = model;
-    this.engineOn = false;
-  }
+// 1. Separation of Concerns
+// 2. Immutable Data
 
-  startEngine() {
-    if (!this.engineOn) {
-      this.engineOn = true;
-      return `Your ${this.name}'s engine is on.`;
-    } else {
-      return `You have already turned on your engine`;
-    }
-  }
+// const person = Object.freeze({
+//   name: "Giniz",
+//   career: "Software Developer",
+// });
 
-  drive() {
-    if (this.engineOn) {
-      return `You can drive your ${this.name}`;
-    } else {
-      return `You need to start your ${this.name}'s engine`;
-    }
-  }
+// const newPerson = { ...person, name: "Ram" };
 
-  stopEngine() {
-    if (this.engineOn) {
-      return `You can stop your engine`;
-    } else {
-      return `You need to start your engine first`;
-    }
-  }
-}
+// console.log(person);
+// console.log(newPerson);
 
-const teslaObj = new Car("Tesla", "Y");
-// console.log(teslaObj.startEngine());
-console.log(teslaObj.drive());
-console.log(teslaObj.stopEngine());
-console.log(teslaObj.startEngine());
+// Pure Function => always gives same o/p or no side effect
+// Pure function is independent which means it only relies in itself and
+// doesn't contain any reference from outside
+
+// const add = (a, b) => {
+//   return a + b;
+// };
+
+// console.log(add(2, 3));
+// console.log(add(2, 3));
+// console.log(add(2, 3));
+// console.log(add(2, 3));
+
+// Impure Function OR Non-pure function
+
+// let total = 0;
+// const add = (a, b) => {
+//   total = a + b;
+//   return total;
+// };
+
+// console.log(add(2, 3));
+// console.log(add(2, 3));
+// console.log(add(2, 3));
+
+// First class function OR Higher order function
+// [].map(()=>{}) => array methods/loops are higher order function itself
+/* In higher order function => Passing function as a parameter */
+
+/* *************************   Answer   ******************************* */
+
+/*
+
+const add = (a, b) => {
+  return a + b;
+};
+
+const substract = (a, b) => {
+  return a - b;
+};
+
+const multiply = (val, exponential) => {
+  return Math.pow(val, exponential);
+};
+
+const mainFunction = (func, a, b) => {
+  return func(a, b);
+};
+
+console.log(mainFunction(add, 5, 8));
+console.log(mainFunction(substract, 5, 8));
+
+console.log(multiply(3, 3));
+
+*/
+
+/* In higher order function => Calling one function inside another function */
+
+/* *************************   Answer   ******************************* */
+
+/*
+
+const main = (a, b) => {
+  const total = a + b;
+  const power = (exp) => {
+    return Math.pow(total, exp);
+  };
+  return power;
+};
+const result = main(2, 3);
+console.log(result(2));
+
+*/
