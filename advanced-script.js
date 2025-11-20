@@ -249,42 +249,124 @@
 
 // More about ====== Abstraction
 
-class Living {
-  constructor(name, add) {
+// class Living {
+//   constructor(name, add) {
+//     this.name = name;
+//     this.add = add;
+//     if (new.target === Living) {   // Abstracting
+//       throw new Error(
+//         "Living is abstracted. You cannot access it and neither can create any instance from it"
+//       );
+//     }
+//   }
+
+//   bio() {
+//     return `This is ${this.name} from ${this.add}`;
+//   }
+// }
+
+// class Person extends Living {
+//   constructor(obj) {
+//     super(obj.name, obj.add);
+//     this.career = obj.career;
+//   }
+
+//   jobcareer() {
+//     return `their career is ${this.career}`;
+//   }
+// }
+
+// const p1 = {
+//   name: "Giniz",
+//   add: "Melbourne",
+//   career: "Software Developer",
+// };
+
+// const p1obj = new Person(p1);
+// console.log(p1obj.bio());
+// console.log(p1obj.jobcareer());
+
+// const newLivingObj = new Living(p1.name, p1.add);
+// console.log(newLivingObj.bio());
+
+// OOP Challenges
+
+// class Car {
+//   constructor(name, model) {
+//     this.name = name;
+//     this.model = model;
+//     this.engineOn = false;
+//   }
+
+//   startEngine() {
+//     if (!this.engineOn) {
+//       this.engineOn = true;
+//       return `You have turned your car on`;
+//     } else {
+//       return `Your car is already on`;
+//     }
+//   }
+
+//   drive() {
+//     if (this.engineOn) {
+//       return `You can drive now!`;
+//     } else {
+//       return `You have to start your engine before driving`;
+//     }
+//   }
+
+//   stopEngine() {
+//     if (this.engineOn) {
+//       return `Your engine has stopped`;
+//     } else {
+//       return `You have to start your engine first to stop it!`;
+//     }
+//   }
+// }
+
+// const carTesla = new Car("Tesla", "Y");
+// // console.log(carTesla);
+// console.log(carTesla.startEngine());
+// console.log(carTesla.drive());
+// console.log(carTesla.stopEngine());
+
+//
+
+class Car {
+  constructor(name, model) {
     this.name = name;
-    this.add = add;
-    if (new.target === Living) {
-      throw new Error(
-        "Living is abstracted. You cannot access it and neither can create any instance from it"
-      );
+    this.model = model;
+    this.engineOn = false;
+  }
+
+  startEngine() {
+    if (!this.engineOn) {
+      this.engineOn = true;
+      return `Your ${this.name}'s engine is on.`;
+    } else {
+      return `You have already turned on your engine`;
     }
   }
 
-  bio() {
-    return `This is ${this.name} from ${this.add}`;
+  drive() {
+    if (this.engineOn) {
+      return `You can drive your ${this.name}`;
+    } else {
+      return `You need to start your ${this.name}'s engine`;
+    }
+  }
+
+  stopEngine() {
+    if (this.engineOn) {
+      return `You can stop your engine`;
+    } else {
+      return `You need to start your engine first`;
+    }
   }
 }
 
-class Person extends Living {
-  constructor(obj) {
-    super(obj.name, obj.add);
-    this.career = obj.career;
-  }
-
-  jobcareer() {
-    return `their career is ${this.career}`;
-  }
-}
-
-const p1 = {
-  name: "Giniz",
-  add: "Melbourne",
-  career: "Software Developer",
-};
-
-const p1obj = new Person(p1);
-console.log(p1obj.bio());
-console.log(p1obj.jobcareer());
-
-const newLivingObj = new Living(p1.name, p1.add);
-console.log(newLivingObj.bio());
+const teslaObj = new Car("Tesla", "Y");
+// console.log(teslaObj.startEngine());
+console.log(teslaObj.drive());
+console.log(teslaObj.stopEngine());
+console.log(teslaObj.startEngine());
